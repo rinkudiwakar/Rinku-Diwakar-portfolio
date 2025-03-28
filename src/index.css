@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
 
 @layer base {
   :root {
@@ -37,21 +37,68 @@
 
     --radius: 0.75rem;
   }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   .clip-path-slant {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
-  
+
   .clip-path-slant-reverse {
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/90 border border-white/20 shadow-lg;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-blue-700 bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .underline-animation {
+    @apply relative inline-block;
+  }
+
+  .underline-animation::after {
+    @apply content-[''] absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300;
+  }
+
+  .underline-animation:hover::after {
+    @apply scale-x-100 origin-bottom-left;
   }
 }
 
@@ -77,10 +124,10 @@
   transform: translateY(-20px);
   transition: opacity 0.5s, transform 0.5s;
 }
+
 html {
   scroll-behavior: smooth;
 }
-
 
 /* Floating animation for the image */
 @keyframes float {
@@ -114,13 +161,18 @@ html {
 
 .animate-pulse-slow {
   animation: pulse-slow 6s ease-in-out infinite;
+  pointer-events: none;
+  /* Prevent overlapping elements from intercepting touch events */
 }
+
 .text-blue-500:hover {
   text-decoration: underline;
 }
+
 body {
   font-family: 'Poppins', sans-serif;
 }
+
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 1s ease-in-out forwards;
@@ -132,6 +184,8 @@ body {
 
   .animate-pulse-slow {
     animation: pulseSlow 6s ease-in-out infinite;
+    pointer-events: none;
+    /* Ensure decorative elements don't block clicks */
   }
 
   @keyframes fadeIn {
@@ -168,54 +222,6 @@ body {
     50% {
       opacity: 0.5;
     }
-  }
-}
-
-* {
-  @apply border-border;
-}
-
-body {
-  @apply bg-background text-foreground antialiased;
-  font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-}
-
-html {
-  @apply scroll-smooth;
-}
-
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .glass-effect {
-    @apply backdrop-blur-md bg-white/90 border border-white/20 shadow-lg;
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-blue-700 bg-clip-text text-transparent;
-  }
-
-  .section-padding {
-    @apply py-16 md:py-24;
-  }
-
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .underline-animation {
-    @apply relative inline-block;
-  }
-
-  .underline-animation::after {
-    @apply content-[''] absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300;
-  }
-
-  .underline-animation:hover::after {
-    @apply scale-x-100 origin-bottom-left;
   }
 }
 @keyframes blink-cursor {
