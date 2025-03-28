@@ -140,7 +140,7 @@ const HeroSection: React.FC = () => {
               {/* Image with Floating Effect */}
               <div className="relative aspect-square rounded-3xl overflow-hidden border border-gray-200 shadow-2xl transform group-hover:-translate-y-2 transition-all duration-500 animate-float">
                 <img
-                  src="src/images/rinku_image1.png"
+                  src="rinku_image1.png"
                   alt="Rinku Diwakar - Professional portrait"
                   className="w-full h-full object-cover"
                 />
