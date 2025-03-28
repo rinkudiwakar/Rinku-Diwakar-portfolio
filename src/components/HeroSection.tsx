@@ -105,7 +105,18 @@ const HeroSection: React.FC = () => {
                 </a>
               </div>
             </div>
-
+            {/* Clean & Professional Resume Button */}
+            <div className="flex justify-start">
+              <a
+                href="https://drive.google.com/file/d/1lCwp2EqzXx7_Jcm0Sd87rmKGNA5EVVVK/view?usp=sharing" // Use the full URL (no leading slash)
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 text-lg font-semibold rounded-lg bg-blue-600 text-white shadow-md flex items-center gap-2 transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
+              >
+                <FileText className="w-5 h-5" />
+                See My Resume
+              </a>
+            </div>
             {/* Buttons */}
             <div
               className="flex flex-wrap gap-4 pt-4 animate-fade-in"
