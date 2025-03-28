@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { ArrowDown, Mail, Github, Linkedin, Phone } from "lucide-react";
+import { ArrowDown, Mail, Github, Linkedin, Phone, FileText } from "lucide-react"; // Added FileText
 import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
@@ -78,7 +77,10 @@ const HeroSection: React.FC = () => {
               className="text-lg text-gray-600 max-w-2xl animate-fade-in leading-relaxed"
               style={{ animationDelay: "0.3s" }}
             >
-              I specialize in Full Stack Web Development, AI/ML, Data Analytics, and UI/UX Design, crafting innovative solutions that blend technical excellence with intuitive design. Currently pursuing B.Tech in Electrical Engineering from NIT Jalandhar, Punjab, India.
+              I specialize in Full Stack Web Development, AI/ML, Data Analytics, and UI/UX
+              Design, crafting innovative solutions that blend technical excellence with
+              intuitive design. Currently pursuing B.Tech in Electrical Engineering from NIT
+              Jalandhar, Punjab, India.
             </p>
 
             {/* Contact Info */}
@@ -102,7 +104,6 @@ const HeroSection: React.FC = () => {
                   <span className="text-sm">+91 9137438718</span>
                 </a>
               </div>
-              
             </div>
 
             {/* Buttons */}
@@ -113,17 +114,15 @@ const HeroSection: React.FC = () => {
               <Button
                 size="lg"
                 className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-              ><a href="#projects">
-                View My Work
-                </a>
+              >
+                <a href="#projects">View My Work</a>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 className="rounded-full border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 font-semibold transition-all duration-300 transform hover:scale-105"
-              ><a href="#contact">
-                Get In Touch
-                </a>
+              >
+                <a href="#contact">Get In Touch</a>
               </Button>
             </div>
           </div>
@@ -166,10 +165,5 @@ const HeroSection: React.FC = () => {
     </section>
   );
 };
-
-// Add custom Tailwind animations in your global CSS (e.g., `globals.css`)
-/*
-
-*/
 
 export default HeroSection;
