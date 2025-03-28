@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowDown, Mail, Github, Linkedin, Phone, FileText } from "lucide-react"; // Added FileText
+import { ArrowDown, Mail, Github, Linkedin, Phone, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
@@ -83,57 +83,60 @@ const HeroSection: React.FC = () => {
               Jalandhar, Punjab, India.
             </p>
 
-            {/* Contact Info */}
+            {/* Buttons (including Resume) */}
             <div
-              className="flex flex-wrap items-center gap-4 pt-4 animate-fade-in"
-              style={{ animationDelay: "0.45s" }}
-            >
-              <div className="flex items-center gap-3">
-                <a
-                  href="mailto:diwakar.active@gmail.com"
-                  className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-all duration-300"
-                >
-                  <Mail className="h-5 w-5" />
-                  <span className="text-sm">diwakar.active@gmail.com</span>
-                </a>
-                <a
-                  href="tel:+919137438718"
-                  className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-all duration-300"
-                >
-                  <Phone className="h-5 w-5" />
-                  <span className="text-sm">+91 9137438718</span>
-                </a>
-              </div>
-            </div>
-            {/* Clean & Professional Resume Button */}
-            <div className="flex justify-start">
-              <a
-                href="https://drive.google.com/file/d/1lCwp2EqzXx7_Jcm0Sd87rmKGNA5EVVVK/view?usp=sharing" // Use the full URL (no leading slash)
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 text-lg font-semibold rounded-lg bg-blue-600 text-white shadow-md flex items-center gap-2 transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
-              >
-                <FileText className="w-5 h-5" />
-                See My Resume
-              </a>
-            </div>
-            {/* Buttons */}
-            <div
-              className="flex flex-wrap gap-4 pt-4 animate-fade-in"
+              className="flex flex-col gap-4 pt-4 animate-fade-in items-start"
               style={{ animationDelay: "0.5s" }}
             >
-              <Button
-                size="lg"
-                className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                <a href="#projects">View My Work</a>
-              </Button>
+              {/* First row of buttons */}
+              <div className="flex flex-wrap items-start gap-4">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="inline-flex !w-auto items-center justify-center 
+                             rounded-full border-blue-600 font-semibold bg-gray-400"
+                >
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=9137438718&text=Hi+Rinku&type=phone_number&app_absent=0"
+                    className="flex items-center gap-2 transition-all duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="text-sm">Text Me</span>
+                  </a>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="inline-flex !w-auto items-center justify-center 
+                             rounded-full border-blue-600 text-blue font-semibold shadow-lg"
+                >
+                  <a href="#projects" className="flex items-center gap-2">
+                    View My Work
+                  </a>
+                </Button>
+              </div>
+
+              {/* Resume Button below the two buttons */}
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 font-semibold transition-all duration-300 transform hover:scale-105"
+                className="inline-flex !w-auto items-center justify-center 
+                           rounded-full border-blue-600 text-blue-600 
+                           hover:bg-blue-50 hover:text-blue-700 
+                           font-semibold transition-all duration-300 
+                           transform hover:scale-105 bg-blue-100"
               >
-                <a href="#contact">Get In Touch</a>
+                <a
+                  href="https://drive.google.com/file/d/1lCwp2EqzXx7_Jcm0Sd87rmKGNA5EVVVK/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-black hover:text-blue-600 transition-all duration-300"
+                >
+                  <FileText className="w-5 h-5" />
+                  See My Resume
+                </a>
               </Button>
             </div>
           </div>
