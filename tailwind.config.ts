@@ -117,7 +117,8 @@ export default {
 			},
 			fontFamily: {
 				sans: ['SF Pro Display', 'system-ui', 'sans-serif'],
-				mono: ['SF Mono', 'monospace']
+				mono: ['SF Mono', 'monospace'],
+				dancing: ['"Dancing Script"', 'cursive'],
 			}
 		}
 	},

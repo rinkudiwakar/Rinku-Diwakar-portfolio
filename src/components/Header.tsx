@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X, Briefcase, User, Code, Mail, Github, Linkedin } from "lucide-react";
 
+
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -10,7 +11,6 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -34,8 +34,9 @@ const Header: React.FC = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo/Name */}
-          <div>
-            <a href="#" className="text-2xl font-bold text-gradient">
+          <div className="text-left">
+            {/* Make the text smaller (text-xl instead of text-2xl), add cursor */}
+            <a href="#" className="text-l font-bold text-foreground/80 relative font-dancing hover:text-foreground transition-colors duration-200">
               Rinku Diwakar
             </a>
           </div>
