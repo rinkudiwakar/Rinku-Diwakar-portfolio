@@ -139,7 +139,7 @@ const Contact: React.FC = () => {
                           : link.name === "LinkedIn"
                             ? "linkedin.com/in/mrdiwakar1"
                             : link.name === "GitHub"
-                              ? "github.com/nitian-rockstar"
+                              ? "github.com/rinkudiwakar"
                               : link.name === "Instagram"
                                 ? "instagram.com/_mrdiwakar"
                                 : link.name === "X (Twitter)"
@@ -221,7 +221,6 @@ const Contact: React.FC = () => {
                       </FormItem>
                     )}
                   />
-
                   <Button type="submit" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>

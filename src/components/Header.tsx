@@ -85,7 +85,7 @@ const Header: React.FC = () => {
             <div className="flex items-center gap-3">
               {/* GitHub */}
               <a
-                href="https://github.com/nitian-rockstar"
+                href="https://github.com/rinkudiwakar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-100
@@ -145,7 +145,7 @@ const Header: React.FC = () => {
             {/* GitHub & LinkedIn in Mobile Menu */}
             <li className="flex items-center gap-4 pt-4">
               <a
-                href="https://github.com/nitian-rockstar"
+                href="https://github.com/rinkudiwakar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-100

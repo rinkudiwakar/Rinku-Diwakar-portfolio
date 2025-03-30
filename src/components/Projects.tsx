@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
   useEffect(() => {
     const loadProjects = async () => {
       setIsLoading(true);
-      const fetchedProjects = await fetchGithubProjects("nitian-rockstar");
+      const fetchedProjects = await fetchGithubProjects("rinkudiwakar");
       setProjects(fetchedProjects);
       setFilteredProjects(fetchedProjects);
       setIsLoading(false);
@@ -206,7 +206,7 @@ const Projects: React.FC = () => {
 
         <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: "0.5s" }}>
           <a
-            href="https://github.com/nitian-rockstar"
+            href="https://github.com/rinkudiwakar"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary transition-all duration-300 hover:scale-105 hover:text-primary/80"

@@ -36,13 +36,13 @@ const FeaturedProject: React.FC = () => {
           and admin dashboard for product management.
         </p>
         <div className="flex flex-wrap gap-4 pt-2">
-          <a href="https://github.com/nitian-rockstar/Amazon-Clone" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/rinkudiwakar/Amazon-Clone" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm" className="gap-2 transform transition-all duration-300 hover:scale-105 hover:shadow-md">
               <Github className="h-4 w-4" />
               View Code
             </Button>
           </a>
-          <a href="https://github.com/nitian-rockstar/Amazon-Clone" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/rinkudiwakar/Amazon-Clone" target="_blank" rel="noopener noreferrer">
             <Button size="sm" className="gap-2 transform transition-all duration-300 hover:scale-105 hover:shadow-md">
               <ExternalLink className="h-4 w-4" />
               Live Demo
