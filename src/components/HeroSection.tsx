@@ -10,9 +10,7 @@ const HeroSection: React.FC = () => {
 
   const phrases = [
     "Hi, I'm Rinku Diwakar",
-    "I'm a Full Stack Dev.",
-    "I'm a UI/UX Designer",
-    "I'm an AI/ML Enthusiast",
+    "Turning Business Problems into Scalable Solutions.",
   ];
 
   // Typing effect logic
