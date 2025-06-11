@@ -75,10 +75,8 @@ const HeroSection: React.FC = () => {
               className="text-lg text-gray-600 max-w-2xl animate-fade-in leading-relaxed"
               style={{ animationDelay: "0.3s" }}
             >
-              I specialize in Full Stack Web Development, AI/ML, Data Analytics, and UI/UX
-              Design, crafting innovative solutions that blend technical excellence with
-              intuitive design. Currently pursuing B.Tech in Electrical Engineering from NIT
-              Jalandhar, Punjab, India.
+              Aspiring Consultant | Startup Builder | Strategy & Data Enthusiast
+              I blend hands-on startup experience with analytical thinking to help businesses grow smarter, faster, and more sustainably.
             </p>
 
             {/* Buttons (including Resume) */}
