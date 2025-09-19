@@ -124,7 +124,7 @@ const HeroSection: React.FC = () => {
                            transform hover:scale-105 bg-blue-100"
               >
                 <a
-                  href="https://drive.google.com/file/d/1ZvaHJqCiRJ_llzILloPJ7J0yGFj6Q8IW/view?usp=sharing"
+                  href="https://drive.google.com/file/d/18FvOBzc61rNsuVVBkgQ0fk3uvAf15krU/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-black hover:text-blue-600 transition-all duration-300"
