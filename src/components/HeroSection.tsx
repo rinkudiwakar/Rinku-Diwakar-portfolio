@@ -75,8 +75,7 @@ const HeroSection: React.FC = () => {
               className="text-lg text-gray-600 max-w-2xl animate-fade-in leading-relaxed"
               style={{ animationDelay: "0.3s" }}
             >
-              Aspiring Consultant | Startup Builder | Strategy & Data Enthusiast
-              I blend hands-on startup experience with analytical thinking to help businesses grow smarter, faster, and more sustainably.
+              AI & ML (Machine Learning, Deep Learning, Generative AI) | Data Analytics (Power BI, SQL, Python) | Electrical Engineering | Leadership & Project Management
             </p>
 
             {/* Buttons (including Resume) */}
