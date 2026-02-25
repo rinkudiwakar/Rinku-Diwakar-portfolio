@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import { ArrowDown, Mail, Github, Linkedin, Phone, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const phrases = [
+  "Hi, I'm Rinku Diwakar",
+  "AI & ML Engineer",
+  "Data Scientist & MLOps Specialist",
+  "Turning Data into Scalable AI Solutions.",
+];
+
 const HeroSection: React.FC = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-
-  const phrases = [
-    "Hi, I'm Rinku Diwakar",
-    "Turning Business Problems into Scalable Solutions.",
-  ];
 
   // Typing effect logic
   useEffect(() => {
@@ -52,18 +54,18 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Side: Text Content */}
-          <div className="lg:col-span-7 space-y-6 animate-fade-in">
+          <div className="lg:col-span-7 space-y-6 animate-fade-in text-center lg:text-left flex flex-col items-center lg:items-start">
             {/* Role Tag */}
             <div
-              className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 text-sm font-medium mb-4 animate-fade-in"
+              className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 text-xs sm:text-sm font-medium mb-4 animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
-              Full Stack Developer
+              AI & ML Engineer | Data Scientist
             </div>
 
             {/* Typing Effect Heading */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight animate-fade-in text-gray-900"
+              className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight animate-fade-in text-gray-900 min-h-[4rem] sm:min-h-0"
               style={{ animationDelay: "0.2s" }}
             >
               <span className="text-blue-600">{text}</span>
@@ -72,24 +74,24 @@ const HeroSection: React.FC = () => {
 
             {/* Description */}
             <p
-              className="text-lg text-gray-600 max-w-2xl animate-fade-in leading-relaxed"
+              className="text-base sm:text-lg text-gray-600 max-w-2xl animate-fade-in leading-relaxed mx-auto lg:mx-0"
               style={{ animationDelay: "0.3s" }}
             >
-              AI & ML (Machine Learning, Deep Learning, Generative AI) | Data Analytics (Power BI, SQL, Python) | Electrical Engineering | Leadership & Project Management
+              Passionate about Machine Learning, MLOps, and Data Analytics. B.Tech student at NIT Jalandhar with experience in building end-to-end ML pipelines, containerization, and cloud deployment.
             </p>
 
             {/* Buttons (including Resume) */}
             <div
-              className="flex flex-col gap-4 pt-4 animate-fade-in items-start"
+              className="flex flex-col gap-4 pt-4 animate-fade-in items-center lg:items-start w-full sm:w-auto"
               style={{ animationDelay: "0.5s" }}
             >
               {/* First row of buttons */}
-              <div className="flex flex-wrap items-start gap-4">
+              <div className="flex flex-wrap items-center lg:items-start justify-center lg:justify-start gap-4 w-full">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="inline-flex !w-auto items-center justify-center 
-                             rounded-full border-blue-600 font-semibold bg-gray-400"
+                  className="inline-flex !w-full sm:!w-auto items-center justify-center 
+                             rounded-full border-blue-600 font-semibold bg-blue-600 text-white hover:bg-blue-700 hover:text-white"
                 >
                   <a
                     href="https://api.whatsapp.com/send/?phone=9137438718&text=Hi+Rinku&type=phone_number&app_absent=0"
@@ -104,8 +106,8 @@ const HeroSection: React.FC = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="inline-flex !w-auto items-center justify-center 
-                             rounded-full border-blue-600 text-blue font-semibold shadow-lg"
+                  className="inline-flex !w-full sm:!w-auto items-center justify-center 
+                             rounded-full border-blue-600 text-blue-600 font-semibold shadow-lg hover:bg-blue-50"
                 >
                   <a href="#projects" className="flex items-center gap-2">
                     View My Work
@@ -117,7 +119,7 @@ const HeroSection: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="inline-flex !w-auto items-center justify-center 
+                className="inline-flex !w-full sm:!w-auto items-center justify-center 
                            rounded-full border-blue-600 text-blue-600 
                            hover:bg-blue-50 hover:text-blue-700 
                            font-semibold transition-all duration-300 
@@ -127,7 +129,7 @@ const HeroSection: React.FC = () => {
                   href="https://drive.google.com/file/d/1aaQO4miLdnErdbSEGEtmBBybjaQZb8qe/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-black hover:text-blue-600 transition-all duration-300"
+                  className="flex items-center gap-2 text-gray-900 hover:text-blue-600 transition-all duration-300"
                 >
                   <FileText className="w-5 h-5" />
                   See My Resume

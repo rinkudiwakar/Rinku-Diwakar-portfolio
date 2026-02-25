@@ -15,6 +15,15 @@ const projectCategories: ProjectCategory[] = [
   { name: "UI/UX Design", slug: "ui-ux" }
 ];
 
+const manualProjectMappings: Record<string, string> = {
+  "MessOS": "full-stack",
+  "Vehicle-Insurance-Domain-Project": "ai-ml",
+  "Kavach": "ai-ml",
+  "Bike_prediction_web_app": "ai-ml",
+  "FORGE": "full-stack",
+  "Rinku-Diwakar-portfolio": "full-stack",
+};
+
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<GithubProject[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<GithubProject[]>([]);
@@ -26,6 +35,7 @@ const Projects: React.FC = () => {
       setIsLoading(true);
       const fetchedProjects = await fetchGithubProjects("rinkudiwakar");
       setProjects(fetchedProjects);
+      // Initialize with 'all'
       setFilteredProjects(fetchedProjects);
       setIsLoading(false);
     };
@@ -41,17 +51,32 @@ const Projects: React.FC = () => {
       return;
     }
 
-    // Filter based on topics, name or description matching the category
     const filtered = projects.filter(project => {
+      // 1. Check manual overrides
+      if (manualProjectMappings[project.name] === category) return true;
+
       const lowerName = project.name.toLowerCase();
       const lowerDesc = project.description?.toLowerCase() || "";
-      const hasMatchingTopic = project.topics?.some(topic =>
-        topic.toLowerCase().includes(category.toLowerCase().replace("-", ""))
+      const lowerTopics = project.topics?.map(t => t.toLowerCase()) || [];
+      const cleanCategory = category.toLowerCase().replace("-", "");
+
+      // 2. Keyword-based matching
+      const keywords: Record<string, string[]> = {
+        "full-stack": ["web", "react", "supabase", "flask", "api", "fullstack", "frontend", "backend"],
+        "ai-ml": ["machine-learning", "ml", "ai", "prediction", "detection", "voice", "notebook", "xgb", "sklearn", "dvc", "mlflow", "cnn", "lstm", "opencv", "neural"],
+        "data-analytics": ["analysis", "analytics", "visualization", "powerbi", "sql", "pandas", "eda", "seaborn", "matplotlib"],
+        "ui-ux": ["design", "figma", "ui", "ux", "landing", "animation"]
+      };
+
+      const categoryKeywords = keywords[category] || [cleanCategory];
+
+      const matchesKeyword = categoryKeywords.some(kw =>
+        lowerName.includes(kw) ||
+        lowerDesc.includes(kw) ||
+        lowerTopics.some(t => t.includes(kw))
       );
 
-      return hasMatchingTopic ||
-        lowerName.includes(category.toLowerCase().replace("-", "")) ||
-        lowerDesc.includes(category.toLowerCase().replace("-", ""));
+      return matchesKeyword;
     });
 
     setFilteredProjects(filtered);
@@ -83,7 +108,7 @@ const Projects: React.FC = () => {
           <p className="text-muted-foreground ">No projects found for this category.</p>
         </div>
       ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
           {filteredProjects.map((project, index) => (
             <Card
               key={project.id}

@@ -7,35 +7,34 @@ import { ExternalLink } from "lucide-react";
 
 const timelineItems: TimelineItem[] = [
   {
-    date: "Expert",
-    title: "Full Stack Developer",
+    date: "June 2025 – July 2025",
+    title: "Data Analytics & ML Intern | TS Bridge",
     description:
-      "Developing enterprise web applications using React, Node.js, and AWS. Implemented CI/CD pipelines and optimized database performance.",
-    skills: ["React", "Node.js", "AWS", "MongoDB", "CI/CD"],
+      "Developed end-to-end ML applications including bike-demand prediction using XGBoost. Implemented MLOps workflows with DVC and MLflow; built CI/CD pipelines and containerized models using Docker. Integrated backend with AWS (EC2, S3) and MongoDB.",
+    skills: ["XGBoost", "MLOps", "Docker", "AWS", "Flask"],
     link: "#"
   },
   {
-    date: "Learning",
-    title: "AI & Machine Learning Engineer",
+    date: "June 2024 – July 2024",
+    title: "Data Science Intern | CourseVita",
     description:
-      "Designed and implemented predictive models and recommendation systems. Developed data processing pipelines and visualization dashboards.",
-    skills: ["Python", "TensorFlow", "PyTorch", "Data Analytics", "SQL"],
+      "Led data preprocessing project for ML dataset preparation. Performed data wrangling, missing value handling, and exploratory data analysis using Python (Pandas, NumPy) to ensure data integrity.",
+    skills: ["Python", "Pandas", "NumPy", "EDA", "Data Cleaning"],
     link: "#"
   },
   {
-    date: "Enhancing",
-    title: "UI/UX Designer & Frontend Developer",
+    date: "2023 – 2027",
+    title: "B.Tech – Electrical Engineering | NIT Jalandhar",
     description:
-      "Created responsive web interfaces with a focus on user experience. Developed design systems and component libraries.",
-    skills: ["UI/UX", "Figma", "React", "CSS", "Design Systems"],
+      "Pursuing Bachelor of Technology with a CGPA of 7.47. Actively involved in technical societies and department leadership roles.",
+    skills: ["Electrical Engineering", "Data Structures", "Algorithms", "Leadership"],
     link: "#"
   },
   {
-    date: "Expert",
-    title: "Data Analyst",
-    description:
-      "Analyzed large datasets to extract actionable insights. Created interactive dashboards and reports for stakeholders.",
-    skills: ["Data Visualization", "Python", "SQL", "Tableau", "Excel"],
+    date: "2022 – 2023",
+    title: "Class XII (CBSE) | MGM KPS, Bheeti Kaushambi",
+    description: "Completed higher secondary education with 90% aggregate.",
+    skills: ["Mathematics", "Physics", "Chemistry"],
     link: "#"
   }
 ];
@@ -45,9 +44,9 @@ const Timeline: React.FC = () => {
     <section className="section-padding bg-secondary min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills Highlights</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Journey</h2>
           <p className="text-muted-foreground">
-            A journey through my professional experience and key accomplishments that have shaped my expertise.
+            A timeline of my professional experience, internships, and educational background.
           </p>
         </div>
 

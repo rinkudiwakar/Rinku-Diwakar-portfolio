@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       behavior: "smooth"
     });
   };
-  
+
   return (
     <footer className="py-12 bg-secondary/50 py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
       <div className="container-custom">
@@ -36,52 +36,52 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="flex items-center space-x-4">
-            <a 
-              href="https://github.com/rinkudiwakar" 
-              target="_blank" 
+            <a
+              href="https://github.com/rinkudiwakar"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/mrdiwakar1/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/mrdiwakar1/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-foreground transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a 
-              href="https://www.instagram.com/_mrdiwakar/?hl=en" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/_mrdiwakar/?hl=en"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-foreground transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="h-5 w-5" />
             </a>
-            <a 
-              href="https://x.com/_mrdiwakar" 
-              target="_blank" 
+            <a
+              href="https://x.com/_mrdiwakar"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-foreground transition-colors"
               aria-label="X (Twitter)"
             >
               <X className="h-5 w-5" />
             </a>
-            <a 
-              href="mailto:diwakar.active@gmail.com" 
+            <a
+              href="mailto:diwakar.active@gmail.com"
               className="text-foreground/70 hover:text-foreground transition-colors"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
             </a>
-            <button 
+            <button
               onClick={scrollToTop}
               className="ml-2 h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary/20 transition-colors"
               aria-label="Scroll to top"

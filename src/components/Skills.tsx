@@ -14,43 +14,53 @@ import {
 // Example skill categories
 const skillCategories = [
   {
+    title: "Machine Learning & MLOps",
+    skills: [
+      { name: "Scikit-learn", proficiency: 92 },
+      { name: "XGBoost", proficiency: 88 },
+      { name: "MLflow / DVC", proficiency: 85 },
+      { name: "Feature Engineering", proficiency: 90 },
+      { name: "CI/CD Pipelines", proficiency: 82 },
+    ],
+  },
+  {
+    title: "Data Analytics & Viz",
+    skills: [
+      { name: "Python (Pandas/NumPy)", proficiency: 95 },
+      { name: "SQL (MySQL)", proficiency: 90 },
+      { name: "Power BI (DAX)", proficiency: 88 },
+      { name: "Advanced Excel", proficiency: 92 },
+      { name: "Matplotlib/Seaborn", proficiency: 85 },
+    ],
+  },
+  {
+    title: "Programming & Core",
+    skills: [
+      { name: "Python", proficiency: 95 },
+      { name: "C / C++", proficiency: 88 },
+      { name: "DSA / OOP", proficiency: 92 },
+      { name: "Git / GitHub", proficiency: 95 },
+      { name: "Technical Leadership", proficiency: 90 },
+    ],
+  },
+  {
     title: "Web Development",
     skills: [
-      { name: "JavaScript/TypeScript", proficiency: 95 },
-      { name: "React/Next.js", proficiency: 90 },
-      { name: "Node.js/Express", proficiency: 88 },
-      { name: "HTML/CSS", proficiency: 95 },
-      { name: "GraphQL", proficiency: 85 },
+      { name: "React.js", proficiency: 85 },
+      { name: "Flask API", proficiency: 88 },
+      { name: "JavaScript", proficiency: 85 },
+      { name: "HTML5 / CSS3", proficiency: 90 },
+      { name: "REST APIs", proficiency: 88 },
     ],
   },
   {
-    title: "AI & Data",
+    title: "Cloud & DevOps",
     skills: [
-      { name: "Python", proficiency: 92 },
-      { name: "Machine Learning", proficiency: 85 },
-      { name: "Data Analytics", proficiency: 90 },
-      { name: "TensorFlow/PyTorch", proficiency: 78 },
-      { name: "SQL/NoSQL", proficiency: 88 },
-    ],
-  },
-  {
-    title: "UI/UX Design",
-    skills: [
-      { name: "Figma", proficiency: 90 },
-      { name: "Responsive Design", proficiency: 95 },
-      { name: "User Research", proficiency: 85 },
-      { name: "Wireframing", proficiency: 92 },
-      { name: "Prototyping", proficiency: 88 },
-    ],
-  },
-  {
-    title: "Tools & DevOps",
-    skills: [
-      { name: "Git/GitHub", proficiency: 95 },
-      { name: "Docker", proficiency: 85 },
-      { name: "AWS/GCP", proficiency: 82 },
-      { name: "CI/CD", proficiency: 80 },
-      { name: "Testing", proficiency: 88 },
+      { name: "Docker", proficiency: 88 },
+      { name: "AWS (EC2/S3)", proficiency: 82 },
+      { name: "Kubernetes", proficiency: 75 },
+      { name: "MongoDB / Supabase", proficiency: 85 },
+      { name: "Dagshub", proficiency: 80 },
     ],
   },
 ];
@@ -99,48 +109,46 @@ const SkillCategoryBar = ({ category, delay }) => {
 
   return (
     <div
-      className="bg-white shadow-xl rounded-lg p-6 hover:shadow-2xl transition-all transform hover:scale-[1.02]"
+      className="bg-white shadow-xl rounded-lg p-4 sm:p-6 hover:shadow-2xl transition-all transform hover:scale-[1.02] border border-gray-100"
       style={{ animationDelay: `${delay * 0.001}s` }}
     >
-      <h3 className="text-2xl font-semibold text-gray-800 text-center mb-4">
+      <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 text-center mb-4">
         {category.title}
       </h3>
       {showChart && (
-        <div className="w-full h-64">
+        <div className="w-full h-[300px] sm:h-64">
           <ResponsiveContainer>
             <BarChart
               data={data}
               layout="vertical"
-              margin={{ top: 10, right: 30, left: 20, bottom: 10 }}
+              margin={{ top: 10, right: 35, left: 10, bottom: 10 }}
             >
               {/* Subtle grid for background */}
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F3F4F6" />
               <XAxis
                 type="number"
                 domain={[0, 100]}
-                tick={{ fontSize: 12, fill: "#6B7280" }}
+                tick={{ fontSize: 10, fill: "#6B7280" }}
                 axisLine={{ stroke: "#E5E7EB" }}
                 tickLine={false}
               />
               <YAxis
                 dataKey="name"
                 type="category"
-                width={130}
-                tick={{ fontSize: 12, fill: "#6B7280" }}
+                width={100}
+                tick={{ fontSize: 10, fill: "#6B7280" }}
                 axisLine={{ stroke: "#E5E7EB" }}
                 tickLine={false}
               />
               <Tooltip
                 cursor={{ fill: "#F9FAFB" }}
-                contentStyle={{ borderRadius: "8px", border: "none" }}
+                contentStyle={{ borderRadius: "8px", border: "none", boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
                 labelStyle={{ color: "#4B5563" }}
-                formatter={(value) => `${value}%`}
+                formatter={(value) => [`${value}%`, "Proficiency"]}
               />
               {/* Define gradient fills for each bar */}
               <defs>
                 {colorPairs.map((pair, idx) => {
-                  // Create a unique ID for each color pair
-                  // Avoid spaces or special characters
                   const gradientId = `gradient-${idx}`;
                   return (
                     <linearGradient
@@ -159,7 +167,6 @@ const SkillCategoryBar = ({ category, delay }) => {
               </defs>
               <Bar dataKey="proficiency" shape={<RoundedBar />} animationDuration={1000}>
                 {data.map((entry, index) => {
-                  // Reference the correct gradient ID
                   const gradientId = `url(#gradient-${entry.gradientIndex})`;
                   return <Cell key={index} fill={gradientId} />;
                 })}
@@ -167,7 +174,7 @@ const SkillCategoryBar = ({ category, delay }) => {
                   dataKey="proficiency"
                   position="right"
                   formatter={(val) => `${val}%`}
-                  style={{ fill: "#374151", fontSize: 12, fontWeight: "500" }}
+                  style={{ fill: "#374151", fontSize: 10, fontWeight: "500" }}
                 />
               </Bar>
             </BarChart>
@@ -180,18 +187,18 @@ const SkillCategoryBar = ({ category, delay }) => {
 
 const Skills = () => {
   return (
-    <section className="min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
+    <section className="min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gray-800">
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-800">
             Skills & Expertise
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
             Explore my proficiency levels in various technologies and domains,
             displayed in a vibrant, modern bar chart layout.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {skillCategories.map((category, index) => (
             <SkillCategoryBar
               key={category.title}
