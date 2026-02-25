@@ -4,51 +4,52 @@ import { ExternalLink, Github } from "lucide-react";
 
 const FeaturedProject: React.FC = () => {
   return (
-    <div className="rounded-2xl overflow-hidden bg-card border shadow-2xl relative z-50 animate-fade-in-slow transform transition-all duration-300 hover:scale-105 min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
+    <div className="rounded-2xl overflow-hidden bg-card border shadow-xl relative z-40 animate-fade-in-slow transform transition-all duration-300">
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/0 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
         <img
           src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426"
           alt="Vehicle Insurance Domain Project"
-          className="w-full h-[400px] object-cover transition-transform duration-700 hover:scale-105"
+          className="w-full h-[250px] sm:h-[400px] object-cover"
         />
-        <div className="absolute bottom-0 left-0 z-20 p-6 w-full">
-          <span className="inline-block px-3 py-1 rounded-full bg-primary/80 text-white text-xs font-medium mb-3">
+        <div className="absolute bottom-0 left-0 z-20 p-5 sm:p-8 w-full">
+          <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] sm:text-xs font-bold mb-3 tracking-wider uppercase">
             Featured Project
           </span>
-          <h3 className="text-2xl font-bold text-white mb-2">Vehicle Insurance Domain Project</h3>
-          <p className="text-white/80 line-clamp-2 mb-4">
+          <h3 className="text-xl sm:text-3xl font-bold text-white mb-2 leading-tight">
+            Vehicle Insurance Domain Project
+          </h3>
+          <p className="text-white/90 text-sm sm:text-base line-clamp-2 max-w-2xl">
             A production-ready end-to-end ML pipeline for vehicle insurance, featuring data versioning, experiment tracking, and cloud deployment.
           </p>
         </div>
       </div>
-      <div className="p-6 space-y-4">
+      <div className="p-5 sm:p-8 space-y-6">
         <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1 rounded-full bg-secondary text-xs font-medium">Python</span>
-          <span className="px-3 py-1 rounded-full bg-secondary text-xs font-medium">Scikit-Learn</span>
-          <span className="px-3 py-1 rounded-full bg-secondary text-xs font-medium">DVC</span>
-          <span className="px-3 py-1 rounded-full bg-secondary text-xs font-medium">MLflow</span>
-          <span className="px-3 py-1 rounded-full bg-secondary text-xs font-medium">Docker</span>
-          <span className="px-3 py-1 rounded-full bg-secondary text-xs font-medium">AWS</span>
+          {["Python", "Scikit-Learn", "DVC", "MLflow", "Docker", "AWS"].map(tech => (
+            <span key={tech} className="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] sm:text-xs font-semibold border border-blue-100">
+              {tech}
+            </span>
+          ))}
         </div>
-        <p className="text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
           This project implements a robust machine learning workflow including data ingestion,
           preprocessing, model training with experiment tracking via MLflow, and automated
           deployment pipelines. Containerized with Docker and deployed on AWS for scalability.
         </p>
-        <div className="flex flex-wrap gap-4 pt-2">
-          <a href="https://github.com/rinkudiwakar/Vehicle-Insurance-Domain-Project" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="gap-2 transform transition-all duration-300 hover:scale-105 hover:shadow-md">
+        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+          <Button variant="outline" size="lg" className="flex-1 gap-2 rounded-full border-blue-200 text-blue-700 hover:bg-blue-50" asChild>
+            <a href="https://github.com/rinkudiwakar/Vehicle-Insurance-Domain-Project" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               View Code
-            </Button>
-          </a>
-          <a href="https://github.com/rinkudiwakar/Vehicle-Insurance-Domain-Project" target="_blank" rel="noopener noreferrer">
-            <Button size="sm" className="gap-2 transform transition-all duration-300 hover:scale-105 hover:shadow-md">
+            </a>
+          </Button>
+          <Button size="lg" className="flex-1 gap-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white" asChild>
+            <a href="https://github.com/rinkudiwakar/Vehicle-Insurance-Domain-Project" target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-4 w-4" />
               Project Details
-            </Button>
-          </a>
+            </a>
+          </Button>
         </div>
       </div>
     </div>

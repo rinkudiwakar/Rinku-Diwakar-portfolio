@@ -108,34 +108,35 @@ const Projects: React.FC = () => {
           <p className="text-muted-foreground ">No projects found for this category.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <Card
               key={project.id}
-              className="overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fade-in"
+              className="overflow-hidden flex flex-col transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl animate-fade-in border-gray-100"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardHeader className="p-0">
+              <CardHeader className="p-0 relative group">
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300 z-10"></div>
                 <img
                   src={`https://opengraph.githubassets.com/1/${project.html_url.replace('https://github.com/', '')}`}
                   alt={project.name}
-                  className="w-full h-48 object-cover transition-all duration-300 hover:scale-110"
+                  className="w-full h-40 sm:h-48 object-cover transition-all duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
               </CardHeader>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2 line-clamp-1">
+              <CardContent className="p-4 sm:p-6 flex-grow">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 line-clamp-1 text-gray-900">
                   {project.name.replace(/-/g, ' ').replace(/_/g, ' ')}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2 sm:line-clamp-3 leading-relaxed">
                   {project.description || "No description available"}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                   {project.topics?.slice(0, 3).map(topic => (
                     <Badge
                       key={topic}
                       variant="secondary"
-                      className="text-xs transform transition-all duration-300 hover:scale-110 hover:shadow-md"
+                      className="text-[10px] sm:text-xs py-0 sm:py-0.5 bg-blue-50 text-blue-700 border-none"
                     >
                       {topic}
                     </Badge>
@@ -143,29 +144,29 @@ const Projects: React.FC = () => {
                   {project.language && (
                     <Badge
                       variant="outline"
-                      className="text-xs transform transition-all duration-300 hover:scale-110 hover:shadow-md"
+                      className="text-[10px] sm:text-xs py-0 sm:py-0.5"
                     >
                       {project.language}
                     </Badge>
                   )}
                 </div>
-                <div className="flex items-center text-xs text-muted-foreground space-x-4">
+                <div className="flex items-center text-[10px] sm:text-xs text-muted-foreground space-x-4">
                   <div className="flex items-center">
-                    <Star className="h-3 w-3 mr-1" />
+                    <Star className="h-3 w-3 mr-1 text-yellow-500" />
                     <span>{project.stargazers_count}</span>
                   </div>
                   <div className="flex items-center">
-                    <GitFork className="h-3 w-3 mr-1" />
+                    <GitFork className="h-3 w-3 mr-1 text-blue-400" />
                     <span>{project.forks_count}</span>
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0">
-                <div className="flex space-x-3">
+              <CardFooter className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0 mt-auto">
+                <div className="flex gap-3 w-full">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="gap-1.5 transform transition-all duration-300 hover:scale-105 hover:shadow-md"
+                    className="flex-1 gap-1.5 text-xs h-9"
                     asChild
                   >
                     <a href={project.html_url} target="_blank" rel="noopener noreferrer">
@@ -176,7 +177,7 @@ const Projects: React.FC = () => {
                   {project.homepage && (
                     <Button
                       size="sm"
-                      className="gap-1.5 transform transition-all duration-300 hover:scale-105 hover:shadow-md"
+                      className="flex-1 gap-1.5 text-xs h-9 bg-blue-600 hover:bg-blue-700"
                       asChild
                     >
                       <a href={project.homepage} target="_blank" rel="noopener noreferrer">
@@ -197,11 +198,11 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="section-padding">
       <div className="container-custom min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects & Work</h2>
-          <p className="text-muted-foreground">
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Projects & Work</h2>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
             A showcase of my recent projects, ranging from full-stack applications
-            to data analytics and UI/UX design work.
+            to AI/ML and Data Analytics.
           </p>
         </div>
 
@@ -209,14 +210,14 @@ const Projects: React.FC = () => {
           <FeaturedProject />
         </div>
 
-        <div className="flex justify-center mb-10 overflow-x-auto pb-4 scrollbar-hide animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          <div className="flex space-x-2">
+        <div className="flex justify-center mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {projectCategories.map((category) => (
               <Button
                 key={category.slug}
                 variant={activeCategory === category.slug ? "default" : "outline"}
                 size="sm"
-                className="rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-md"
+                className="rounded-full text-xs sm:text-sm px-4 py-1 h-auto transform transition-all duration-300 hover:scale-105 hover:shadow-md"
                 onClick={() => handleCategoryChange(category.slug)}
               >
                 {category.name}

@@ -96,57 +96,51 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section-padding min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50">
+    <section id="contact" className="section-padding min-h-screen py-16 bg-gradient-to-br from-green-50 via-purple-50 to-indigo-50 overflow-hidden">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-muted-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">Get In Touch</h2>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
             Have a project in mind or want to discuss potential opportunities?
             I'd love to hear from you. Feel free to reach out using the form below
             or through any of my social channels.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="space-y-8 animate-fade-in text-center lg:text-left" style={{ animationDelay: "0.2s" }}>
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold">Contact Information</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">Contact Information</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Feel free to reach out with any questions, project inquiries, or
                 just to say hello. I'm always open to discussing new opportunities and ideas.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
-                  target={link.name === "Address" ? "" : "_blank"}
-                  rel={link.name === "Address" ? "" : "noopener noreferrer"}
-                  className="flex items-center gap-4 p-4 rounded-lg border bg-card hover:bg-muted/50 transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-gray-100 bg-white hover:bg-blue-50/50 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
-                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 text-primary">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex-shrink-0">
                     {link.icon}
                   </div>
-                  <div>
-                    <h4 className="font-medium">{link.name}</h4>
-                    <p className="text-sm text-muted-foreground">
+                  <div className="text-left">
+                    <h4 className="font-bold text-gray-900 text-sm sm:text-base">{link.name}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground truncate max-w-[180px] sm:max-w-none">
                       {link.name === "Email"
                         ? "diwakar.active@gmail.com"
                         : link.name === "WhatsApp"
                           ? "+91 9137438718"
                           : link.name === "LinkedIn"
                             ? "linkedin.com/in/mrdiwakar1"
-                            : link.name === "GitHub"
-                              ? "github.com/rinkudiwakar"
-                              : link.name === "Instagram"
-                                ? "instagram.com/_mrdiwakar"
-                                : link.name === "X (Twitter)"
-                                  ? "x.com/_mrdiwakar"
-                                  : link.name === "Address"
-                                    ? "NIT Jalandhar, Punjab, 144011"
-                                    : ""}
+                            : link.name === "Instagram"
+                              ? "@_mrdiwakar"
+                              : ""}
                     </p>
                   </div>
                 </a>
@@ -155,8 +149,8 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <div className="rounded-xl border bg-card p-6 shadow-sm">
-              <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+            <div className="rounded-2xl border border-gray-100 bg-white p-6 sm:p-8 shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
 
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
