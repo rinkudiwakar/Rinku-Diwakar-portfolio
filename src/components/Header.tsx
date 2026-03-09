@@ -97,7 +97,7 @@ const Header: React.FC = () => {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/mrdiwakar1/"
+                href="https://www.linkedin.com/in/rinkudiwakar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-100
